@@ -1,0 +1,80 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/game.js">
+    </script>
+    <title>Barn Yard Numbers</title>
+</head>
+
+<body background="assets/images/Background.jpg">
+    <div class="container-fluid">
+        <div class="row topintro">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-8 intro">
+                <h1>Barn Yard Numbers</h1>
+                <p>Each animal has a random number 1 - 12 assigned to it. By clicking on each animal Your Score will increase. Using your math skills click the right animals to match your target number in the hay bail.</p>
+                <div class="col-md-2">
+                </div>
+            </div>
+        </div>
+        <div class="row animals">
+            <div class="col-md-2"></div>
+            <div class="col-md-2">
+                <div class="thumbnail" id="sheep">
+                    <img src="assets/images/sheep.png">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="thumbnail" id="pig">
+                    <img src="assets/images/pig.png">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="thumbnail" id="cow">
+                    <img src="assets/images/cow.png">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="thumbnail" id="chicken">
+                    <img src="assets/images/chicken.png">
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+        <div class="row scoreNum">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <h3 id="score">Your Score: </h3>
+                <div class="yourScore"></div>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="row stats">
+                <div class="col-md-2"></div>
+                <div class="col-md-4 winsloss">
+                    <div class="thumbnail">
+                        <img src="assets/images/bucket.png">
+                        <h2 id="win">Wins = </h2>
+                        <div class="wins"></div>
+                        <h2 id="loss">Losses = </h2>
+                        <div class="losses"></div>
+                    </div>
+                </div>
+                <div class="col-md-4 ranNum">
+                    <h3>Match this Number</h3>
+                    <div class="thumbnail">
+                        <img src="assets/images/hay.png">
+                        <div class="randomNumber"></div>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+                <button type="button" class="btn btn-danger">New Game</button>
+            </div>
+        </div>
+</body>
+
+</html>
