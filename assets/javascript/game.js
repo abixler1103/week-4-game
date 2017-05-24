@@ -28,8 +28,8 @@ function checkScore(current_score) {
 function gameSetup() {
     var winning_number = targetNumber();
     $(".btn").on("click", gameSetup);
-    $(".wins").html(0);
-    $(".losses").html(0);
+    $(".wins").html(wins);
+    $(".losses").html(losses);
     $(".yourScore").html(0);
     $(".randomNumber").html(winning_number);
     NumtoWin = winning_number;
