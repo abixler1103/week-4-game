@@ -2,12 +2,19 @@ var wins = 0;
 var losses = 0;
 var yourScore = 0;
 var winNum = 0;
-var sheep = Math.floor((Math.random() * 12) + 1);
-var pig = Math.floor((Math.random() * 12) + 1);
-var cow = Math.floor((Math.random() * 12) + 1);
-var chicken = Math.floor((Math.random() * 12) + 1);
+//var sheep = getRandomInt(1, 12);
+
+var pig = getRandomInt(1, 12);
+var cow = getRandomInt(1, 12);
+var chicken = getRandomInt(1, 12);
 var NumtoWin = 0;
 var winning_number = targetNumber();
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+}
 
 function targetNumber() {
     //var winNum = Math.floor(Math.random() * 20) + 1;
@@ -15,32 +22,56 @@ function targetNumber() {
 }
 
 function checkScore(current_score) {
-    if (current_score === NumtoWin) {
+    if (current_score == NumtoWin) {
         alert("Congrats, You WON!");
         wins++;
+        gameSetup();
     } else if (current_score > NumtoWin) {
         alert("Too Many, You Lose!");
         losses++;
+        gameSetup();
     }
 }
 
 
+
+
 function gameSetup() {
+    yourScore = 0;
+    sheep = getRandomInt(1, 12);
+    console.log("SheepOnInit= ", sheep);
+
     var winning_number = targetNumber();
-    $(".btn").on("click", gameSetup);
     $(".wins").html(wins);
     $(".losses").html(losses);
     $(".yourScore").html(0);
     $(".randomNumber").html(winning_number);
     NumtoWin = winning_number;
 
+}
+
+
+$(document).ready(function() {
+    //gameSetup();
+
     // sheep
     $("#sheep").on("click", function() {
-        yourScore += sheep;
+        //alert("hello");
+        // console.log("Sheep= ", sheep);
+        // console.log("YourScore= ", yourScore);
+
+        console.log("SheepPreClick= ", sheep);
+
+        yourScore = yourScore + sheep;
         checkScore(yourScore);
+
+        console.log("SheepPostClick= ", sheep);
+
+        // console.log("Sheep2= ", sheep);
+        // console.log("YourScore2= ", yourScore);
+
         $(".yourScore").html(yourScore);
     });
-
 
     // pig
     $("#pig").on("click", function() {
@@ -62,9 +93,6 @@ function gameSetup() {
         checkScore(yourScore);
         $(".yourScore").html(yourScore);
     });
-}
 
 
-$(document).ready(function() {
-    gameSetup();
 });
